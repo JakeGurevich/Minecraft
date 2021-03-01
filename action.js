@@ -3,6 +3,7 @@
      {name:"axe",class : "axe",remove : ["leaf", "trunk"]},
      {name:"pickaxe",class : "pickaxe",remove : ["stone"]},
      {name:"shovel",class : "shovel",remove : ["ground"]},
+     {name:"magic-glasses",class : "glasses",remove : ["sun"]},
     
     ],
     material:{
@@ -12,6 +13,7 @@
        3: "trunk",
        4: "leaf",
        5: "ground",
+       6: "sun",
     },
     storage: [],
   currentMaterial: "",
@@ -31,14 +33,15 @@
       //3.   tree
       //4.   leaf
       //5.   ground
+      //6.   sun
 
 
 
     const matrixWorld = [
-        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,1,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0],
-        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,0,0,6,0],
+        [0,0,0,1,0,1,1,1,1,0,0,0,0,0,0,6,6,6,0,0],
+        [0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,6,6,6,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0],
         [0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,0,0,0,0,0],
         [0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,0,0,0,0,0],
         [2,2,2,2,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0],
@@ -88,6 +91,9 @@
           tileItem.classList.add(materialType);
           break;
         case 5:
+          tileItem.classList.add(materialType);
+          break;
+        case 6:
           tileItem.classList.add(materialType);
           break;
         default:

@@ -49,6 +49,9 @@
     background: url(./img/shovel.png);
      background-size: cover;
 }
+.sun {
+    background-color: yellow;
+}
 .tool-item:hover {
     border: 1px solid white;
 }
